@@ -1,5 +1,9 @@
 # Changelog
 
+### v2.30.3
+
+Fix [#235](https://github.com/meteorhacks/kadira/issues/235).
+
 ### v2.30.2
 
 Fix [#144](https://github.com/meteorhacks/kadira/issues/144).
