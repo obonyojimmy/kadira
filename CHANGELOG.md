@@ -1,5 +1,10 @@
 # Changelog
 
+### v2.30.4
+
+* Fix invalid header field contentType instead of Content-Type.
+* Remove IE8/9 workaround.
+
 ### v2.30.3
 
 Fix [#235](https://github.com/meteorhacks/kadira/issues/235).
