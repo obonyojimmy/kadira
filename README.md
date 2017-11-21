@@ -1,14 +1,13 @@
-[![Build Status](https://travis-ci.org/meteorhacks/kadira.svg?branch=master)](https://travis-ci.org/meteorhacks/kadira)
-
 ## [Kadira - Performance Monitoring for Meteor](https://kadira.io) 
+This project is based on the [Kadira](https://github.com/meteorhacks/kadira) without jQuery dependency.
 
-[![Kadira - Performance Monitoring for Meteor](https://i.cloudup.com/LwrCCa_RRE.png)](https://kadira.io)
+If you are looking for the kadira server, take a look at [meteor apm server](https://github.com/lmachens/meteor-apm-server).
 
 ### Getting started
 
-1. Create an account at <https://kadira.io>
+1. Create an account in Meteor APM or Kadira
 2. From the UI, create an app. You'll get an `AppId` and an `AppSecret`.
-3. Run `meteor add meteorhacks:kadira` in your project
+3. Run `meteor add lmachens:kadira` in your project
 4. Configure your Meteor app with the `AppId` and `AppSecret` by adding the following code snippet to a `server/kadira.js` file:
 
 ```js
@@ -52,8 +51,43 @@ export KADIRA_APP_SECRET=<appSecret>
 ### Error Tracking
 
 Kadira comes with built in error tracking solution for Meteor apps. It has been enabled by default.
-For more information, please visit our [docs](http://support.kadira.io/knowledgebase/topics/62637-error-tracking) on [error tracking](http://support.kadira.io/knowledgebase/topics/62637-error-tracking).
+For more information, please visit the meteor [docs](http://galaxy-guide.meteor.com/kb-error-tracking.html).
 
-### More information
+By default, Kadira tracks all the errors for you. But you may need to handle errors yourself. For those situations, you may need to report the error back to kadira as well. Here are the some of the options you can do.  
 
-Check out [Kadira Academy](https://kadira.io/academy) for more information and improve your app with Kadira.
+### Option 1 - Throw a new Error
+
+Easiest option is try capture errors and handle them yourself. Then throw another error. Then kadira will capture that and you can see that error from in the UI.  
+
+``` js
+try {
+  // your code which may throw some errors
+} catch(ex) {
+  // handle your error and throw again
+  throw ex;
+}
+```
+
+### Option 2 - Use Kadira.trackError
+
+Other option is to use `Kadira.trackError` API. Which is available on both **client** and the **server**. See how it can used.  
+
+``` js
+try {
+  // your code 
+} catch(ex) {
+  var type = 'my-error-type';
+  var message = ex.message;
+  **Kadira.trackError(type, message);**
+}
+```
+
+When you are tracking custom errors, do not use following types:  
+
+*   client
+*   method
+*   sub
+*   server-crash
+*   server-internal
+
+We use above types to track errors automatically. If you also send errors with above types, things may not works as they used to.
