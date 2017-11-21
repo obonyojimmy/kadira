@@ -78,7 +78,7 @@ try {
 } catch(ex) {
   var type = 'my-error-type';
   var message = ex.message;
-  **Kadira.trackError(type, message);**
+  Kadira.trackError(type, message);
 }
 ```
 
