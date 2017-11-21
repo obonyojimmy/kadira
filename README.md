@@ -1,4 +1,4 @@
-## [Kadira - Performance Monitoring for Meteor](https://kadira.io) 
+## Kadira - Performance Monitoring for Meteor
 This project is based on the [Kadira](https://github.com/meteorhacks/kadira) without jQuery dependency.
 
 If you are looking for the kadira server, take a look at [meteor apm server](https://github.com/lmachens/meteor-apm-server).
