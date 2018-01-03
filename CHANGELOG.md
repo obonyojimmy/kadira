@@ -1,5 +1,9 @@
 # Changelog
 
+### v2.30.6
+
+* Fix TypeError: self.traceArchive.push is not a function
+
 ### v2.30.5
 
 * Ensure error strings are encapsulated in an `Error`-like object for transmission to the APM server.
