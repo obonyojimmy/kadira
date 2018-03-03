@@ -1,5 +1,9 @@
 # Changelog
 
+### v2.30.7
+
+* Remove logs from issue [meteorhacks#174](https://github.com/meteorhacks/kadira/issues/174)
+
 ### v2.30.6
 
 * Fix TypeError: self.traceArchive.push is not a function
