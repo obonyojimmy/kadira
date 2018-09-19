@@ -2,6 +2,10 @@
 
 ### v2.30.7
 
+* Fix log `[object Object]` issue. See [meteor#10078](https://github.com/meteor/meteor/issues/10078).Thx @zodern.
+
+### v2.30.7
+
 * Remove logs from issue [meteorhacks#174](https://github.com/meteorhacks/kadira/issues/174)
 
 ### v2.30.6
