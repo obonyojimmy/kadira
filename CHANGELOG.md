@@ -1,5 +1,9 @@
 # Changelog
 
+### v2.31.0
+
+* Fix MeteorX dependency. See [#3](https://github.com/lmachens/kadira/pull/3).Thx @KoenLav.
+
 ### v2.30.7
 
 * Fix log `[object Object]` issue. See [meteor#10078](https://github.com/meteor/meteor/issues/10078).Thx @zodern.
